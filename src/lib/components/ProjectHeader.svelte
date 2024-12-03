@@ -75,6 +75,12 @@
 		position: fixed;
 		top: 6rem;
 		left: 4rem;
+
+		& a {
+			&:hover {
+				font-weight: bold;
+			}
+		}
 	}
 	.content {
 		height: 100%;
