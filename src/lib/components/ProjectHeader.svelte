@@ -62,7 +62,7 @@
 
 <style>
 	header {
-		height: 60dvh;
+		height: 80dvh;
 		width: 100dvw;
 
 		padding: 4rem;
@@ -102,10 +102,10 @@
 	img {
 		grid-column: 8 / -1;
 		width: 100%;
-		height: calc(60dvh - 8rem);
+		height: calc(80dvh - 8rem);
 		object-fit: contain;
 		object-position: center right;
-		padding: 2rem 0;
+		/* padding: 2rem 0; */
 	}
 	p {
 		font-size: 1.5rem;
