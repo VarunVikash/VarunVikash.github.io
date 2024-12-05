@@ -3,19 +3,47 @@
 	import { images } from '$lib/assets/hums/index';
 	import DesignVideo from '$lib/assets/hums/WF Prototypes.mp4';
 	import Outcomevideo from '$lib/assets/hums/Final sceens walkthrough.mp4';
+	import { onMount } from 'svelte';
 
-	import { useIntersectionObserver } from 'runed';
+	const sections = ['title', 'context', 'field', 'analysis', 'design', 'evaluation', 'outcome'];
 
-	const sections = ['context', 'field-study', 'analysis', 'design', 'evaluation', 'outcome'];
+	let currentSection = $state(sections[0]);
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						currentSection = entry.target.id;
+					}
+				});
+			},
+			{
+				threshold: [0.1],
+				rootMargin: '-50px 0px'
+			}
+		);
+
+		sections.forEach((section) => {
+			const element = document.getElementById(section);
+			if (element) {
+				observer.observe(element);
+			}
+		});
+
+		return () => {
+			observer.disconnect();
+		};
+	});
 </script>
 
 <div class="root">
-	<ProjectHeader />
+	<ProjectHeader {currentSection} />
 	<section class="layout-grid full-bleed" id="context">
 		<img src={images['Context']} alt="" />
 	</section>
 	<hr />
-	<section class="layout-grid full-bleed" id="field-study">
+	<section class="layout-grid full-bleed" id="field">
 		<img src={images['FieldStudy']} alt="" />
 	</section>
 	<hr />
@@ -49,9 +77,6 @@
 </div>
 
 <style>
-	.root {
-		display: contents;
-	}
 	img {
 		grid-column: 1 / -1;
 	}
@@ -66,5 +91,11 @@
 	footer {
 		width: 100%;
 		padding: 4rem;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: #ffe4d6;
 	}
 </style>

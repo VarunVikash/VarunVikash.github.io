@@ -1,5 +1,7 @@
 <script>
 	import { images } from '$lib/assets/projects/index';
+
+	let { currentSection } = $props();
 </script>
 
 {#snippet badge()}
@@ -50,13 +52,13 @@
 
 <nav>
 	<ul>
-		<li><a href="#title">Title</a></li>
-		<li><a href="#context">Context</a></li>
-		<li><a href="#field-study">Field study</a></li>
-		<li><a href="#analysis">Analysis</a></li>
-		<li><a href="#design">Design</a></li>
-		<li><a href="#evaluation">Evaluation</a></li>
-		<li><a href="#outcome">Outcome</a></li>
+		<li><a href="#title" class:active={currentSection === 'title'}>Title</a></li>
+		<li><a href="#context" class:active={currentSection === 'context'}>Context</a></li>
+		<li><a href="#field" class:active={currentSection === 'field'}>Field study</a></li>
+		<li><a href="#analysis" class:active={currentSection === 'analysis'}>Analysis</a></li>
+		<li><a href="#design" class:active={currentSection === 'design'}>Design</a></li>
+		<li><a href="#evaluation" class:active={currentSection === 'evaluation'}>Evaluation</a></li>
+		<li><a href="#outcome" class:active={currentSection === 'outcome'}>Outcome</a></li>
 	</ul>
 </nav>
 
@@ -77,8 +79,14 @@
 		left: 4rem;
 
 		& a {
-			&:hover {
-				font-weight: bold;
+			opacity: 0.9;
+
+			transition: all 0.2s ease-in-out;
+
+			&:hover,
+			&.active {
+				opacity: 1;
+				font-weight: 650;
 			}
 		}
 	}

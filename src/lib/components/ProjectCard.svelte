@@ -22,7 +22,8 @@
 	}>();
 </script>
 
-<a href={url} target={url.includes('http') ? '_blank' : '_self'}>
+<a href={url} target={'_blank'}>
+	<!-- <a href={url} target={url.includes('http') ? '_blank' : '_self'}> -->
 	<article
 		class:featured
 		style:background-image={`linear-gradient(to right, ${color}, transparent), url('${images[image]}')`}

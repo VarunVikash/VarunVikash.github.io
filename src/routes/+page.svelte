@@ -19,7 +19,7 @@
 		{
 			title: 'Augsburger 101',
 			description:
-				'Location-based mobile tour guide app using Augmented Reality for expliration of cutural heritage through playful interactions',
+				'Location-based mobile tour guide app using Augmented Reality for exploration of cultural heritage through playful interactions',
 			tags: ['UX Design for AR'],
 			color: '#A7A3A7',
 			image: 'Augs',
