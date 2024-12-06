@@ -3,7 +3,14 @@
 	<ul>
 		<li><a href="/#work">Work</a></li>
 		<li><a href="/#contact">Contact</a></li>
-		<li><a href="">Resume</a></li>
+		<li>
+			<a
+				href="https://drive.google.com/file/d/1ZLeTyW_KfzBctjVj8CTDGAznI5QISGro/view?usp=drivesdk"
+				target="_blank"
+			>
+				Resume
+			</a>
+		</li>
 	</ul>
 </nav>
 
